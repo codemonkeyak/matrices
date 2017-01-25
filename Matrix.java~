@@ -32,7 +32,7 @@ public class Matrix {
 	}
 
 	public void add(Matrix m) {
-		if(row != m.row && col != m.col) {
+		if(row != m.row || col != m.col) {
 		  return;
 		} else {
       int p = 0;
