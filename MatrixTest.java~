@@ -1,0 +1,23 @@
+
+
+public class MatrixTest {
+
+  public static void main(String[] args) {
+    Matrix m = new Matrix(2,2);
+		m.print();
+		m.fillRand();
+		m.print();
+    System.out.println("-------------------");
+		Matrix n = new Matrix(2,3);
+		n.fillRand();
+		n.print();
+ 		System.out.println("-------------------");
+		m.add(n);
+		m.print();
+		System.out.println("-------------------");
+		m.multiply(3);
+		m.print();
+	}
+
+
+}
