@@ -51,5 +51,25 @@ public class Matrix {
 			}
 		}
 	}
+
+	public void printMat(int r, int c, int[][] q) {
+     for(int i=0; i<r ; i++) {
+	    for(int j=0; j< c ; j++) {
+        System.out.print(q[i][j]+ " " );
+			}
+			System.out.println();
+		}
+
+	}
+
+	public int[][] transpose() {
+		int[][] b = new int[col][row];
+    for(int i=0; i<row; i++) {
+      for(int j=0; j<col; j++) {	
+        b[j][i] = arr[i][j];
+			}
+		}
+		return b;
+	}
 }
 

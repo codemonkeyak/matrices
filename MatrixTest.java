@@ -25,6 +25,13 @@ public class MatrixTest {
 		m.multiply(3);
 		m.print();
 	 System.out.println("");
+
+	  System.out.println("--------transpose-----------");
+		Matrix p = new Matrix(2,4);
+		p.fillRand();
+		int[][] b = p.transpose();
+		p.printMat(4,2,b);
+		System.out.println("");
 	}
 
 
