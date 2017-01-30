@@ -27,11 +27,20 @@ public class MatrixTest {
 	 System.out.println("");
 
 	  System.out.println("--------transpose-----------");
-		Matrix p = new Matrix(2,4);
+		Matrix p = new Matrix(2,3);
 		p.fillRand();
-		int[][] b = p.transpose();
-		p.printMat(4,2,b);
+		p.print();
+		System.out.println("-------------------");
+		p.transpose();
+		p.print();
 		System.out.println("");
+
+		System.out.println("--------identity-----------");
+		Matrix q = new Matrix(2,3);
+		q.identityMat(4);
+		q.print();
+		System.out.println("");
+
 	}
 
 

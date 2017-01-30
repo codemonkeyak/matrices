@@ -62,14 +62,34 @@ public class Matrix {
 
 	}
 
-	public int[][] transpose() {
-		int[][] b = new int[col][row];
+	public void transpose() {
+		int b[][] = new int[col][row];
     for(int i=0; i<row; i++) {
       for(int j=0; j<col; j++) {	
-        b[i][j] = arr[j][i];
+        b[j][i] = arr[i][j];
 			}
 		}
-		return b;
+		arr = b;
+
+		int temp = row;
+		row= col;
+		col = temp;
+	}
+
+	public Matrix makeAShallowCopy() {
+    Matrix m = new Matrix(row,col);
+		m.arr = arr;
+		return m;
+	}
+
+	public void identityMat(int c) {
+    int[][] b = new int[c][c];
+    for(int i=0; i<c; i++) {	
+          b[i][i] = 1;
+		}
+		arr = b;
+		row = c;
+		col = c;
 	}
 }
 
