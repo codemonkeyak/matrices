@@ -85,11 +85,67 @@ public class Matrix {
 	public void identityMat(int c) {
     int[][] b = new int[c][c];
     for(int i=0; i<c; i++) {	
-          b[i][i] = 1;
+      b[i][i] = 1;
 		}
 		arr = b;
 		row = c;
 		col = c;
+	}
+
+	public void matProduct(Matrix m) {
+		int p = 0;
+		Matrix c = new Matrix(row,m.col);
+		if(col != m.row) {
+			return;
+		} 
+    for(int i=0; i<row; i++) {
+		  for(int j=0; j<m.col; j++) {
+        c.arr[i][j]= giveIndex(i,j,m);
+			}
+		}
+		arr = c.arr;
+		row = c.row;
+		col = c.col;
+	}
+
+	public int giveIndex(int kr, int kc,Matrix s) {
+    int p = 0;
+		int c = 0;
+		for(int i=0; i< s.row ; i++) {
+      p = arr[kr][i]*s.arr[i][kc];
+			c=c+p;
+		}
+		return c;
+	}
+
+	public int getDet(Matrix m) {
+    if(m.row != m.col) {
+      return 0;
+		}
+		if(m.row == 1) {
+      return m.arr[0][0];
+		}
+    if(m.row == 2) {
+      for(int i=0; i<2; i++) {
+       // a[0][i]*a[]
+
+			}
+		}
+		return 0;
+	}
+
+	public Matrix getSubMatrix(Matrix m, int exCol) {
+		int p =0; int q=0; int r=0; int s=0;
+		Matrix a = new Matrix(2,2);
+    for(int i=0,k=0; i<m.col; i++) {
+      if(i != exCol) {
+        for(int j=0; j<a.row; j++) {
+          a.arr[j][k] = m.arr[j+1][i];
+				}
+				k++;
+			}	 
+		}
+		return a;
 	}
 }
 

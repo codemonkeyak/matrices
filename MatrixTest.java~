@@ -41,6 +41,18 @@ public class MatrixTest {
 		q.print();
 		System.out.println("");
 
+		System.out.println("--------matrix prod-----------");
+    Matrix x = new Matrix(2,3);
+		x.fillRand();
+		System.out.println("--------matrix x-----------");
+		x.print();
+		Matrix y = new Matrix(3,1);
+		y.fillRand();
+		System.out.println("--------matrix y-----------");
+		y.print();
+		x.matProduct(y);
+		System.out.println("--------matrix prod-----------");
+		x.print();
 	}
 
 
